@@ -31,7 +31,6 @@ const responsive = {
 const ImageCarousel = ({ images }: { images: CarouselImage[] }) => {
   return (
     <Carousel responsive={responsive} containerClass="w-[88vw]">
-      {/*aspect-[12/9] */}
       {images.map((image, index) => {
         return (
           <div key={index}>
@@ -39,7 +38,7 @@ const ImageCarousel = ({ images }: { images: CarouselImage[] }) => {
               src={image.src}
               alt={image.alt}
               quality={95}
-              className="object-contain w-[88vw]"
+              className="object-contain w-[88vw] max-h-[177px]"
             />
           </div>
         )
