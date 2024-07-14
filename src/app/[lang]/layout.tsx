@@ -54,7 +54,7 @@ export default async function RootLayout({
                   {children}
                   <ThemeSwitch />
                   <Footer t={t} />
-                  <Toaster position="top-right" />
+                  <Toaster position="top-center" />
                 </ActiveSectionContextProvider>
               </ThemeContextProvider>
             </RouteParamsProvider>
