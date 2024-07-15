@@ -11,18 +11,28 @@ export default function Modal({ children, show }: { children: React.ReactNode, s
 
   React.useEffect(() => setMounted(true), []);
 
+  // const content =  React.useMemo(() => {
+  //   if (show) {
+  //     return (
+  //       <div className="fixed top-0 left-0 right-0 bottom-0 z-[1002] flex items-center justify-center bg-black bg-opacity-[0.5]">
+  //         <div className={clsx("w-[95vw] h-[95vh] rounded-[8px] relative", theme === 'light' ? 'bg-white' : 'bg-gray-800')}>
+  //           {children}
+  //         </div>
+  //       </div>
+  //     )
+  //   }
+  //   return null
+  // }, [show])
+
   const content =  React.useMemo(() => {
-    if (show) {
-      return (
-        <div className="fixed top-0 left-0 right-0 bottom-0 z-[1002] flex items-center justify-center bg-black bg-opacity-[0.5]">
-          <div className={clsx("w-[95vw] h-[95vh] rounded-[8px] relative", theme === 'light' ? 'bg-white' : 'bg-gray-800')}>
-            {children}
-          </div>
+    return (
+      <div className={clsx("fixed top-0 left-0 right-0 bottom-0 z-[1002] flex items-center justify-center bg-black bg-opacity-[0.5]", show ? 'block' : 'hidden')}>
+        <div className={clsx("w-[95vw] h-[95vh] rounded-[8px] relative", theme === 'light' ? 'bg-white' : 'bg-gray-800')}>
+          {children}
         </div>
-      )
-    }
-    return null
-  }, [show]) 
+      </div>
+    )
+  }, [show])
 
   React.useEffect(() => {
     if (show) {

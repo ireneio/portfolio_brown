@@ -81,7 +81,7 @@ export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
                   src={image.src}
                   alt={image.alt}
                   className={clsx(
-                    "max-h-[82vh] object-contain rounded-[8px]",
+                    "max-h-[82vh] w-auto object-contain",
                     theme === 'light' ? 'bg-gray-300 bg-opacity-[0.3]' : 'bg-gray-700 bg-opacity-[0.3]'
                   )}
                 />
