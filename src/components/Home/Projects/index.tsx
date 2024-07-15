@@ -58,6 +58,7 @@ export default function Projects({ t, data }: any) {
           <Carousel
             responsive={responsive}
             showDots={true}
+            className="max-h-[95vh]"
           >
             {modalImageList.map((image: any, index) => {
               return (
