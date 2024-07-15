@@ -27,10 +27,10 @@ export default function Header({ lang, links }: { lang: string, links: LinkData[
         initial={{ y: -100, x: "-50%", opacity: 0 }}
         animate={{ y: 0, x: "-50%", opacity: 1 }}
       >
-        <div className="md:hidden flex items-center justify-start absolute top-[1rem] left-[1rem] py-2" onClick={handleSidebarOpen}>
-          <FaBars />
+        <div className="md:hidden flex items-center justify-center absolute px-[1rem] h-full" onClick={handleSidebarOpen}>
+          <FaBars className="text-[24px]" />
         </div>
-        <div className="md:hidden flex items-center justify-start absolute top-[1rem] right-[1rem] py-2">
+        <div className="md:hidden flex items-center justify-start absolute top-[1.1rem] right-[1rem] py-2">
           <LocaleSwitch lang={lang} />
         </div>
       </motion.div>

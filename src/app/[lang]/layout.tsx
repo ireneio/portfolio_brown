@@ -6,13 +6,13 @@ import Header from "@/components/Header";
 import useData from "@/lib/useData";
 import ThemeSwitch from "@/components/ThemeSwitch";
 import ThemeContextProvider from "@/context/theme-context";
-
-import "../globals.css";
 import StoreProvider from "../StoreProvider";
 import Footer from "@/components/Footer";
 import { getDictionary } from "./dictionaries";
 import Sidebar from "@/components/Sidebar";
 import { Toaster } from "react-hot-toast";
+
+import "../globals.css";
 
 const inter = Inter({ subsets: ["latin"] });
 

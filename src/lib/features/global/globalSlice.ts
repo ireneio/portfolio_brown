@@ -10,6 +10,11 @@ export const globalSlice = createSlice({
   reducers: {
     setSidebarOpen: (state, action) => {
       state.sidebarOpen = action.payload;
+      if (action.payload === true) {
+        document.body.style.overflowY = 'hidden'
+      } else if (action.payload === false) {
+        document.body.style.overflowY = 'auto'
+      }
     },
   },
 });

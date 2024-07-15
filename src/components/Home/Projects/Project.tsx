@@ -6,6 +6,8 @@ import { motion, useScroll, useTransform } from "framer-motion";
 import { ProjectData } from "@/lib/types";
 import ImageCarousel from "./ImageCarousel";
 import clsx from "clsx";
+import { useAppDispatch } from "@/lib/hooks";
+import { setModalImageList, setShowProjectImageModal } from "@/lib/features/project/projectSlice";
 
 export default function Project({
   title,
@@ -14,6 +16,7 @@ export default function Project({
   tags,
   imageUrls,
 }: ProjectData) {
+  const dispatch = useAppDispatch()
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -33,6 +36,11 @@ export default function Project({
       }
     })
   }, [imageUrls])
+
+  const handleProjectImageClick = () => {    
+    dispatch(setModalImageList(imagesArr))
+    dispatch(setShowProjectImageModal(true))
+  }
 
   return (
     <motion.div
@@ -93,7 +101,9 @@ export default function Project({
                 hover:z-[2]
                 hover:bg-white
                 hover:bg-opacity-[0.7]
+                cursor-pointer
               `)}
+              onClick={() => handleProjectImageClick()}
             />
           )
         }) : null}

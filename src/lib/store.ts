@@ -1,10 +1,12 @@
 import { configureStore } from '@reduxjs/toolkit'
 import globalSlice from './features/global/globalSlice'
+import projectSlice from './features/project/projectSlice'
 
 export const makeStore = () => {
   return configureStore({
     reducer: {
-      globalSlice
+      globalSlice,
+      projectSlice
     }
   })
 }
