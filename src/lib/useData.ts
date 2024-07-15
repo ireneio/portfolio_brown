@@ -105,7 +105,7 @@ const useData = async (lang: string) => {
       icon: React.createElement(FaGraduationCap),
       date: t.experience.fifth.date,
     },
-  ] as const
+  ]
 
   const projectsData = [
     {
@@ -136,7 +136,7 @@ const useData = async (lang: string) => {
       tags: ["React", "TypeScript", "NextJS", "Bootstrap4", "Redux", ".NET", "MS SQL", "React Native", "Native Base"],
       imageUrls: [image_fqc_admin, image_fqc_admin2, image_fqc_admin3, image_fqc_app, image_fqc_app2, image_fqc_app3],
     },
-  ] as const
+  ]
 
   const skillsData = [
     "HTML",
