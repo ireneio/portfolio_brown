@@ -24,13 +24,16 @@ const responsive = {
   },
   mobile: {
     breakpoint: { max: 464, min: 0 },
-    items: 1
+    items: 1,
   }
 };
 
 const ImageCarousel = ({ images }: { images: CarouselImage[] }) => {
   return (
-    <Carousel responsive={responsive} containerClass="w-[88vw]">
+    <Carousel
+      responsive={responsive}
+      containerClass="w-[88vw]"
+    >
       {images.map((image, index) => {
         return (
           <div key={index}>

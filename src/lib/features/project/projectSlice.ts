@@ -3,6 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   showProjectImageModal: false,
   modalImageList: [],
+  initalModalImageIndex: 0,
 };
 
 export const projectSlice = createSlice({
@@ -15,9 +16,16 @@ export const projectSlice = createSlice({
     setModalImageList: (state, action) => {
       state.modalImageList = action.payload;
     },
+    setInitalModalImageIndex: (state, action) => {
+      state.initalModalImageIndex = action.payload;
+    },
   },
 });
 
-export const { setShowProjectImageModal, setModalImageList } = projectSlice.actions;
+export const {
+  setShowProjectImageModal,
+  setModalImageList,
+  setInitalModalImageIndex,
+} = projectSlice.actions;
 
 export default projectSlice.reducer;

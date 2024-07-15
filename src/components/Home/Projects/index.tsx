@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import SectionHeading from "@/components/SectionHeading";
 import Project from "./Project";
 import { useSectionInView } from "@/lib/useSectionInView";
@@ -13,6 +13,8 @@ import Carousel from "react-multi-carousel";
 import Image from "next/image";
 
 import "react-multi-carousel/lib/styles.css";
+import { useTheme } from "@/context/theme-context";
+import clsx from "clsx";
 
 const responsive = {
   superLargeDesktop: {
@@ -34,11 +36,22 @@ const responsive = {
   }
 };
 
-export default function Projects({ t, data }: any) {
+export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
+  const { theme } = useTheme()
   const dispatch = useAppDispatch()
   const showProjectImageModal = useAppSelector(state => state.projectSlice.showProjectImageModal)
   const modalImageList = useAppSelector(state => state.projectSlice.modalImageList)
+  const initalModalImageIndex = useAppSelector(state => state.projectSlice.initalModalImageIndex)
   const { ref } = useSectionInView("Projects", 0.5);
+  const carouselref = useRef<any>(null)
+
+  useEffect(() => {
+    if (showProjectImageModal) {
+      if (carouselref.current) {
+        carouselref.current.state.currentSlide = initalModalImageIndex
+      }
+    }
+  }, [showProjectImageModal])
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
@@ -56,8 +69,8 @@ export default function Projects({ t, data }: any) {
         </div>
         <div className="px-[24px] py-[72px]">
           <Carousel
+            ref={carouselref}
             responsive={responsive}
-            showDots={true}
             itemClass="flex justify-center"
           >
             {modalImageList.map((image: any, index) => {
@@ -67,7 +80,10 @@ export default function Projects({ t, data }: any) {
                   quality={100}
                   src={image.src}
                   alt={image.alt}
-                  className="max-h-[82vh] object-contain"
+                  className={clsx(
+                    "max-h-[82vh] object-contain rounded-[8px]",
+                    theme === 'light' ? 'bg-gray-300 bg-opacity-[0.3]' : 'bg-gray-700 bg-opacity-[0.3]'
+                  )}
                 />
               )
             })}

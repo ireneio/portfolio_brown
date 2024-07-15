@@ -7,7 +7,7 @@ import { ProjectData } from "@/lib/types";
 import ImageCarousel from "./ImageCarousel";
 import clsx from "clsx";
 import { useAppDispatch } from "@/lib/hooks";
-import { setModalImageList, setShowProjectImageModal } from "@/lib/features/project/projectSlice";
+import { setInitalModalImageIndex, setModalImageList, setShowProjectImageModal } from "@/lib/features/project/projectSlice";
 
 export default function Project({
   title,
@@ -37,7 +37,8 @@ export default function Project({
     })
   }, [imageUrls])
 
-  const handleProjectImageClick = () => {    
+  const handleProjectImageClick = (index: number) => {
+    dispatch(setInitalModalImageIndex(index))
     dispatch(setModalImageList(imagesArr))
     dispatch(setShowProjectImageModal(true))
   }
@@ -103,7 +104,7 @@ export default function Project({
                 hover:bg-opacity-[0.7]
                 cursor-pointer
               `)}
-              onClick={() => handleProjectImageClick()}
+              onClick={() => handleProjectImageClick(index)}
             />
           )
         }) : null}
