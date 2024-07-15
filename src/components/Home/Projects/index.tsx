@@ -58,6 +58,7 @@ export default function Projects({ t, data }: any) {
           <Carousel
             responsive={responsive}
             showDots={true}
+            itemClass="flex justify-center"
           >
             {modalImageList.map((image: any, index) => {
               return (
