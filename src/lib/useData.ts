@@ -61,6 +61,7 @@ const useData = async (lang: string) => {
     {
       name: t.header.contact,
       hash: "#contact",
+      key: 'Contact'
     },
   ]
 
