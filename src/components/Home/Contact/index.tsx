@@ -1,6 +1,6 @@
 "use client";
 
-import React from "react";
+import React, { useState } from "react";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useSectionInView";
@@ -9,8 +9,26 @@ import SubmitBtn from "./SubmitButton";
 import toast from "react-hot-toast";
 import { contactEmail } from "@/lib/consts";
 
-export default function Contact({ t }: any) {
+export default function Contact({ t }: { t: any }) {
   const { ref } = useSectionInView("Contact");
+  const [loading, setLoading] = useState(false)
+  const [form, setForm] = useState({
+    senderEmail: '',
+    message: '',
+  })
+
+  const handleSubmit = async () => {
+    setLoading(true)
+    const { data, error } = await sendEmail(form, t);
+    if (data?.error) {
+      toast.error(data?.error?.message);
+    } else if (error) {
+      toast.error(error);
+    } else {
+      toast.success(t.toast.email_sent_success);
+    }
+    setLoading(false)
+  }
 
   return (
     <motion.section
@@ -40,33 +58,24 @@ export default function Contact({ t }: any) {
 
       <form
         className="mt-10 flex flex-col dark:text-black"
-        action={async (formData) => {
-          const { data, error } = await sendEmail(formData);
-
-          if (error) {
-            toast.error(t.error);
-            return;
-          }
-
-          toast.success(t.toast.email_sent_success);
-        }}
+        action={handleSubmit}
       >
         <input
           className="h-14 px-4 rounded-lg borderBlack dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="senderEmail"
           type="email"
           required
           maxLength={500}
           placeholder={t.form.your_email}
+          onChange={(e) => setForm((prev) => ({ ...prev, senderEmail: e.target.value }))}
         />
         <textarea
           className="h-52 my-3 rounded-lg borderBlack p-4 dark:bg-white dark:bg-opacity-80 dark:focus:bg-opacity-100 transition-all dark:outline-none"
-          name="message"
           placeholder={t.form.your_message}
           required
           maxLength={5000}
+          onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
         />
-        <SubmitBtn t={t} />
+        <SubmitBtn t={t} loading={loading} onSubmit={handleSubmit} />
       </form>
     </motion.section>
   );

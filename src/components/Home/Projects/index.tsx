@@ -46,7 +46,7 @@ export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
   const carouselRef = useRef<any>(null)
 
   useEffect(() => {
-    console.log('carouselRef.current', carouselRef.current);
+    // console.log('carouselRef.current', carouselRef.current);
     if (carouselRef.current && showProjectImageModal) {
       carouselRef.current.state.currentSlide = initalModalImageIndex
     }
