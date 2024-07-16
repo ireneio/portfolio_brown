@@ -12,6 +12,7 @@ import Sidebar from "@/components/Sidebar";
 import { Toaster } from "react-hot-toast";
 import "../globals.css";
 import GReCaptchaProvider from "../GReCaptchaProvider";
+import I18nProvider from "../I18nProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -47,21 +48,23 @@ export default async function RootLayout({
           {/* original value: #dbd7fb */}
           <div className="bg-[rgba(105,85,62,0.35)] absolute top-[-6rem] -z-10 right-[11rem] h-[31.25rem] w-[31.25rem] rounded-full blur-[10rem] sm:w-[68.75rem] dark:bg-[#946263]"></div>
           <div className="bg-[rgba(179,142,100,0.55)] absolute top-[-1rem] -z-10 left-[-35rem] h-[31.25rem] w-[50rem] rounded-full blur-[10rem] sm:w-[68.75rem] md:left-[-33rem] lg:left-[-28rem] xl:left-[-15rem] 2xl:left-[-5rem] dark:bg-[#676394]"></div>
-          <GReCaptchaProvider>
-            <StoreProvider>
-              <RouteParamsProvider params={params}>
-                <ThemeContextProvider>
-                  <ActiveSectionContextProvider>
-                    <Header lang={lang} links={links} />
-                    <Sidebar links={links} />
-                    {children}
-                    <Footer t={t} />
-                    <Toaster position="top-center" />
-                  </ActiveSectionContextProvider>
-                </ThemeContextProvider>
-              </RouteParamsProvider>
-            </StoreProvider>
-          </GReCaptchaProvider>
+            <GReCaptchaProvider>
+              <StoreProvider>
+                <RouteParamsProvider params={params}>
+                  <I18nProvider>
+                    <ThemeContextProvider>
+                      <ActiveSectionContextProvider>
+                        <Header lang={lang} links={links} />
+                        <Sidebar links={links} />
+                        {children}
+                        <Footer t={t} />
+                        <Toaster position="top-center" />
+                      </ActiveSectionContextProvider>
+                    </ThemeContextProvider>
+                  </I18nProvider>
+                </RouteParamsProvider>
+              </StoreProvider>
+            </GReCaptchaProvider>
         {/* </I18nextProvider> */}
       </body>
     </html>

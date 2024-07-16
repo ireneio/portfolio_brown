@@ -37,7 +37,7 @@ export function middleware(request: NextRequest) {
   // The new URL is now /en-US/products
   return NextResponse.redirect(request.nextUrl)
 }
- 
+
 export const config = {
   matcher: ['/((?!api|_next/static|_next/image|assets|favicon.ico|sw.js|site.webmanifest|resume).*)']
 }
