@@ -119,7 +119,7 @@ export default function Project({
                 "
               />
               <div
-                className={clsx("absolute top-[1rem] left-[1rem] cursor-pointer px-2 py-2 rounded-[4px]", theme === 'light' ? 'bg-gray-800' : 'bg-gray-500')}
+                className={clsx("absolute top-[1rem] group-odd:right-[1rem] group-even:left-[1rem] cursor-pointer px-2 py-2 rounded-[4px]", theme === 'light' ? 'bg-gray-300 shadow-md' : 'bg-gray-500')}
                 onClick={() => handleProjectImageClick(index)}
               >
                 <FaExpandArrowsAlt />

@@ -8,6 +8,8 @@ import { sendEmail } from "@/actions/sendEmail";
 import SubmitBtn from "./SubmitButton";
 import toast from "react-hot-toast";
 import { contactEmail } from "@/lib/consts";
+import { useGoogleReCaptcha } from 'react-google-recaptcha-v3';
+import { verifyReCaptcha } from "@/actions/verifyReCaptcha";
 
 export default function Contact({ t }: { t: any }) {
   const { ref } = useSectionInView("Contact");
@@ -16,9 +18,26 @@ export default function Contact({ t }: { t: any }) {
     senderEmail: '',
     message: '',
   })
+  const { executeRecaptcha } = useGoogleReCaptcha();
 
-  const handleSubmit = async () => {
+  const handleSubmit = async () => {    
+    if (!executeRecaptcha) {
+      toast.error('50001 ReCaptcha not available')
+      return
+    }
+
     setLoading(true)
+
+    const gRecaptchaToken = await executeRecaptcha('contactForm');
+
+    const { error: verifyReCaptchaError } = await verifyReCaptcha(gRecaptchaToken, t)
+
+    if (verifyReCaptchaError) {
+      toast.error(verifyReCaptchaError)
+      setLoading(false)
+      return
+    }
+
     const { data, error } = await sendEmail(form, t);
     if (data?.error) {
       toast.error(data?.error?.message);
@@ -26,6 +45,7 @@ export default function Contact({ t }: { t: any }) {
       toast.error(error);
     } else {
       toast.success(t.toast.email_sent_success);
+      setForm({ senderEmail: '', message: '' })
     }
     setLoading(false)
   }

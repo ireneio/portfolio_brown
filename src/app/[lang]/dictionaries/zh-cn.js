@@ -129,10 +129,11 @@ export default {
     "download_cv": "下载履历"
   },
   toast: {
-    download_success: '下载成功!',
+    download_success: '下载成功',
     invalid_email: '非正确的电子邮件格式',
     exceed_max_length_5000: '大于最大字数: 5000',
-    email_sent_success: 'Email 已寄出!'
+    email_sent_success: 'Email 已寄出',
+    reCaptcha_error: 'ReCaptcha 验证失败',
   },
   form: {
     your_email: '请输入您的 Email',

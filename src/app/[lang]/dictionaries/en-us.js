@@ -125,10 +125,11 @@ export default {
     "download_cv": "Download CV"
   },
   toast: {
-    download_success: 'Download success!',
+    download_success: 'File has been downloaded',
     invalid_email: 'Invalid email address',
     exceed_max_length_5000: 'Exceed max length: 5000',
-    email_sent_success: 'Email has been sent!'
+    email_sent_success: 'Email has been sent!',
+    reCaptcha_error: 'ReCaptcha verification error',
   },
   form: {
     your_email: 'Enter your email',
