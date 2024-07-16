@@ -40,7 +40,10 @@ export default function Project({
   const handleProjectImageClick = (index: number) => {
     dispatch(setInitalModalImageIndex(index))
     dispatch(setModalImageList(imagesArr))
-    dispatch(setShowProjectImageModal(true))
+    const tid = setTimeout(() => {
+      dispatch(setShowProjectImageModal(true))
+      clearTimeout(tid)
+    }, 100)
   }
 
   return (
