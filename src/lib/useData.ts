@@ -58,10 +58,10 @@ const useData = async (lang: string) => {
       hash: "#experience",
       key: 'Experience'
     },
-    // {
-    //   name: t.header.contact,
-    //   hash: "#contact",
-    // },
+    {
+      name: t.header.contact,
+      hash: "#contact",
+    },
   ]
 
   const experiencesData = [
