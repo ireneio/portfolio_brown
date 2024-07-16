@@ -7,7 +7,7 @@ import Skills from "@/components/Home/Skills";
 import useData from "@/lib/useData";
 import Experience from '@/components/Home/Experience';
 import SoftSkills from '@/components/Home/SoftSkills';
-// import Contact from '@/components/Home/Contact';
+import Contact from '@/components/Home/Contact';
 
 export default async function Home({ params }: any) {
   const { lang } = params
@@ -24,7 +24,7 @@ export default async function Home({ params }: any) {
       <SoftSkills t={t} data={softSkillsData} />
       <Projects t={t} data={projectsData} />
       <Experience t={t} data={experiencesData} />
-      {/* <Contact t={t} /> */}
+      <Contact t={t} />
     </main>
   );
 }

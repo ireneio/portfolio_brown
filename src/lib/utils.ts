@@ -9,6 +9,11 @@ export const validateString = (
   return true;
 };
 
+export function validateEmail(email: string) {
+  const regex = /^[^\s@]+@[^\s@]+\.[^\s@]{2,}$/;
+  return regex.test(email);
+}
+
 export const getErrorMessage = (error: unknown): string => {
   let message: string;
 

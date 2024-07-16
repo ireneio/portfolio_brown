@@ -43,15 +43,14 @@ export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
   const modalImageList = useAppSelector(state => state.projectSlice.modalImageList)
   const initalModalImageIndex = useAppSelector(state => state.projectSlice.initalModalImageIndex)
   const { ref } = useSectionInView("Projects", 0.5);
-  const carouselref = useRef<any>(null)
+  const carouselRef = useRef<any>(null)
 
   useEffect(() => {
-    if (showProjectImageModal) {
-      if (carouselref.current) {
-        carouselref.current.state.currentSlide = initalModalImageIndex
-      }
+    console.log('carouselRef.current', carouselRef.current);
+    if (carouselRef.current && showProjectImageModal) {
+      carouselRef.current.state.currentSlide = initalModalImageIndex
     }
-  }, [showProjectImageModal])
+  }, [carouselRef.current, initalModalImageIndex, showProjectImageModal])
 
   return (
     <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
@@ -69,7 +68,7 @@ export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
         </div>
         <div className="px-[24px] py-[72px]">
           <Carousel
-            ref={carouselref}
+            ref={carouselRef}
             responsive={responsive}
             itemClass="flex justify-center"
           >

@@ -116,8 +116,9 @@ export default {
     "contact": "Contact me"
   },
   "contact": {
+    title: "Contact me",
     "submit": "Submit",
-    "contact_me_at": "Please contact me through {{email}} or through the form below."
+    "contact_me_at": `Please contact me through <a href="mailto:{{email}}" style="text-decoration: underline;">{{email}}</a> or through the form below.`
   },
   "footer": {
     contact_me: "Contact Me",
@@ -125,5 +126,12 @@ export default {
   },
   toast: {
     download_success: 'Download success!',
+    invalid_email: 'Invalid email address',
+    exceed_max_length_5000: 'Exceed max length: 5000',
+    email_sent_success: 'Email has been sent!'
+  },
+  form: {
+    your_email: 'Enter your email',
+    your_message: 'Enter your message...',
   }
 }

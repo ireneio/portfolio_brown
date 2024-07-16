@@ -99,7 +99,7 @@ export default {
     },
     "fifth": {
       "title": "Boston University",
-      role: "学士, 资讯工程",
+      role: "本科, 计算机",
       "location": "麻州, 美国",
       "description": "",
       "date": "08/2014 - 05/2018"
@@ -120,8 +120,9 @@ export default {
     "contact": "联络我"
   },
   "contact": {
+    title: "联络我",
     "submit": "送出",
-    "contact_me_at": "请于 {{email}} 或透过以下表单联络我。"
+    "contact_me_at": `请于 <a href="mailto:{{email}}" style="text-decoration: underline;">{{email}}</a> 或透过以下表单联络我。`
   },
   "footer": {
     contact_me: "联络我",
@@ -129,5 +130,12 @@ export default {
   },
   toast: {
     download_success: '下载成功!',
+    invalid_email: '非正确的电子邮件格式',
+    exceed_max_length_5000: '大于最大字数: 5000',
+    email_sent_success: 'Email 已寄出!'
+  },
+  form: {
+    your_email: '请输入您的 Email',
+    your_message: '请输入讯息...',
   }
 }

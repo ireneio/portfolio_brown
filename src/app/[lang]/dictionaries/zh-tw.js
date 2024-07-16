@@ -120,8 +120,9 @@ export default {
     "contact": "聯絡我"
   },
   "contact": {
+    title: "聯絡我",
     "submit": "送出",
-    "contact_me_at": "請於 {{email}} 或透過以下表單聯絡我。"
+    "contact_me_at": `請於 <a href="mailto:{{email}}" style="text-decoration: underline;">{{email}}</a> 或透過以下表單聯絡我。`
   },
   "footer": {
     contact_me: "聯絡我",
@@ -129,5 +130,12 @@ export default {
   },
   toast: {
     download_success: '下載成功!',
+    invalid_email: '非正確的電子郵件格式',
+    exceed_max_length_5000: '大於最大字數: 5000',
+    email_sent_success: 'Email 已寄出!'
+  },
+  form: {
+    your_email: '請輸入您的 Email',
+    your_message: '請輸入訊息...',
   }
 }

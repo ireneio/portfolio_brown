@@ -3,7 +3,7 @@ import { createSlice } from '@reduxjs/toolkit';
 const initialState = {
   showProjectImageModal: false,
   modalImageList: [],
-  initalModalImageIndex: 0,
+  initalModalImageIndex: -1,
 };
 
 export const projectSlice = createSlice({

@@ -104,7 +104,6 @@ export default function Project({
                   hover:z-[2]
                   hover:bg-white
                   hover:bg-opacity-[0.7]
-                  cursor-pointer
               "
               key={index}
             >
@@ -117,11 +116,10 @@ export default function Project({
                   aspect-[12/9]
                   object-contain
                   align-middle
-                  cursor-pointer
                 "
               />
               <div
-                className={clsx("absolute top-[1rem] left-[1rem] px-2 py-2 rounded-[4px]", theme === 'light' ? 'bg-gray-800' : 'bg-gray-500')}
+                className={clsx("absolute top-[1rem] left-[1rem] cursor-pointer px-2 py-2 rounded-[4px]", theme === 'light' ? 'bg-gray-800' : 'bg-gray-500')}
                 onClick={() => handleProjectImageClick(index)}
               >
                 <FaExpandArrowsAlt />
