@@ -8,6 +8,8 @@ import ImageCarousel from "./ImageCarousel";
 import clsx from "clsx";
 import { useAppDispatch } from "@/lib/hooks";
 import { setInitalModalImageIndex, setModalImageList, setShowProjectImageModal } from "@/lib/features/project/projectSlice";
+import { FaExpandArrowsAlt, FaWindowMaximize } from "react-icons/fa";
+import { useTheme } from "@/context/theme-context";
 
 export default function Project({
   title,
@@ -17,6 +19,7 @@ export default function Project({
   imageUrls,
 }: ProjectData) {
   const dispatch = useAppDispatch()
+  const { theme } = useTheme()
   const ref = useRef<HTMLDivElement>(null);
   const { scrollYProgress } = useScroll({
     target: ref,
@@ -77,38 +80,53 @@ export default function Project({
         </div>
         {imageUrls ? imageUrls.map((url, index) => {
           return (
-            <Image
-              src={url}
-              alt={title}
-              key={index}
-              quality={95}
+            <div
               style={{ top: 8 + (index * 80) }}
-              className={clsx(`
-                absolute hidden sm:block -right-40 max-w-[26rem] rounded-lg shadow-2xl
-                transition
-                group-hover:scale-[1.04]
-                group-hover:-translate-x-3
-                group-hover:translate-y-3
-                group-hover:-rotate-2
-
-                group-even:group-hover:translate-x-3
-                group-even:group-hover:translate-y-3
-                group-even:group-hover:rotate-2
-
-                group-even:right-[initial] group-even:-left-40
-
-                aspect-[12/9]
-                object-contain
-                align-middle
-                group-even:hover:left-0
-                group-odd:hover:right-0
-                hover:z-[2]
-                hover:bg-white
-                hover:bg-opacity-[0.7]
-                cursor-pointer
-              `)}
-              onClick={() => handleProjectImageClick(index)}
-            />
+              className="
+                  absolute hidden sm:block -right-40 max-w-[26rem] rounded-lg shadow-2xl
+                  transition
+                  group-hover:scale-[1.04]
+                  group-hover:-translate-x-3
+                  group-hover:translate-y-3
+                  group-hover:-rotate-2
+  
+                  group-even:group-hover:translate-x-3
+                  group-even:group-hover:translate-y-3
+                  group-even:group-hover:rotate-2
+  
+                  group-even:right-[initial] group-even:-left-40
+  
+                  aspect-[12/9]
+                  object-contain
+                  align-middle
+                  group-even:hover:left-0
+                  group-odd:hover:right-0
+                  hover:z-[2]
+                  hover:bg-white
+                  hover:bg-opacity-[0.7]
+                  cursor-pointer
+              "
+              key={index}
+            >
+              <Image
+                src={url}
+                alt={title}
+                quality={95}
+                className="
+                  w-[26rem]
+                  aspect-[12/9]
+                  object-contain
+                  align-middle
+                  cursor-pointer
+                "
+              />
+              <div
+                className={clsx("absolute top-[1rem] left-[1rem] px-2 py-2 rounded-[4px]", theme === 'light' ? 'bg-gray-800' : 'bg-gray-500')}
+                onClick={() => handleProjectImageClick(index)}
+              >
+                <FaExpandArrowsAlt />
+              </div>
+            </div>
           )
         }) : null}
       </section>
