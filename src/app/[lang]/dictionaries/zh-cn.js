@@ -4,7 +4,7 @@ export default {
     "description": "Brown 的个人形象网站"
   },
   "intro": {
-    "name": "Hao Ping (Brown) Chuang",
+    "name": "Brown",
     "download_cv": "下载履历",
     "contact_me": "联络我",
     "resume": "履历",

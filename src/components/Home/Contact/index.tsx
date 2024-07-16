@@ -86,6 +86,7 @@ export default function Contact({ t }: { t: any }) {
           required
           maxLength={500}
           placeholder={t.form.your_email}
+          value={form.senderEmail}
           onChange={(e) => setForm((prev) => ({ ...prev, senderEmail: e.target.value }))}
         />
         <textarea
@@ -93,6 +94,7 @@ export default function Contact({ t }: { t: any }) {
           placeholder={t.form.your_message}
           required
           maxLength={5000}
+          value={form.message}
           onChange={(e) => setForm((prev) => ({ ...prev, message: e.target.value }))}
         />
         <SubmitBtn t={t} loading={loading} onSubmit={handleSubmit} />

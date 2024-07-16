@@ -150,12 +150,13 @@ const useData = async (lang: string) => {
     "VueJS",
     "NextJS",
     "NuxtJS",
+    "React Native",
     "NodeJS",
-    "NestJS",
-    "Git",
+    // "NestJS",
     "PHP Laravel",
     "MySQL",
-    "PostgreSQL",
+    // "PostgreSQL",
+    // "Git",
   ]
 
   const softSkillsData = [

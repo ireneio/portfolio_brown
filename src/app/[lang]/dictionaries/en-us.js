@@ -4,7 +4,7 @@ export default {
     "description": "Brown's Portfolio Website"
   },
   "intro": {
-    "name": "Hao Ping (Brown) Chuang",
+    "name": "Brown",
     "download_cv": "Download CV",
     "contact_me": "Contact me",
     "resume": "resume",

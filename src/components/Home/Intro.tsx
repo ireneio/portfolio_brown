@@ -62,7 +62,7 @@ export default function Intro({ t }: any) {
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
-        <a className="underline cursor-pointer" href={`mailto:${contactEmail}`}>{contactEmail}</a>
+        Email: <a className="underline cursor-pointer" href={`mailto:${contactEmail}`}>{contactEmail}</a>
       </motion.p>
 
       {/* <motion.span
