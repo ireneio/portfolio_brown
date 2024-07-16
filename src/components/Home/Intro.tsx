@@ -51,11 +51,24 @@ export default function Intro({ t }: any) {
       </div>
 
       <motion.h1
-        className="mb-2 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
+        className="relative mb-2 mt-4 px-4 text-2xl font-medium !leading-[1.5] sm:text-4xl"
         initial={{ opacity: 0, y: 100 }}
         animate={{ opacity: 1, y: 0 }}
       >
         {t.intro.name}
+        <motion.span
+          className="ml-2 text-4xl"
+          initial={{ opacity: 0, scale: 0 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{
+            type: "spring",
+            stiffness: 125,
+            delay: 0.1,
+            duration: 0.7,
+          }}
+        >
+          👋
+        </motion.span>
       </motion.h1>
       <motion.p
         className="relative mb-10 text-md"
@@ -64,20 +77,6 @@ export default function Intro({ t }: any) {
       >
         Email: <a className="underline cursor-pointer" href={`mailto:${contactEmail}`}>{contactEmail}</a>
       </motion.p>
-
-      {/* <motion.span
-        className=" bottom-0 right-0 text-4xl"
-        initial={{ opacity: 0, scale: 0 }}
-        animate={{ opacity: 1, scale: 1 }}
-        transition={{
-          type: "spring",
-          stiffness: 125,
-          delay: 0.1,
-          duration: 0.7,
-        }}
-      >
-        👋
-      </motion.span> */}
 
       <motion.div
         className="flex flex-col sm:flex-row items-center justify-center gap-2 px-4 text-lg font-medium"
@@ -103,7 +102,7 @@ export default function Intro({ t }: any) {
         <button
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           onClick={() => {
-            handleDownloadFile(`/resume_${params?.lang}.pdf`, `resume_${t.intro.resume}.pdf`)
+            handleDownloadFile(`/resume_${params?.lang}.pdf`, `resume_${t.intro.name}.pdf`)
             toast.success(t.toast.download_success)
           }}
         >

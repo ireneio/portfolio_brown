@@ -19,7 +19,7 @@ export default function Footer({ t }: { t: any }) {
         <button
           className="text-xs underline"
           onClick={() => {
-            handleDownloadFile(`/resume_${params?.lang}.pdf`, `resume_${t.intro.resume}.pdf`)
+            handleDownloadFile(`/resume_${params?.lang}.pdf`, `resume_${t.intro.name}.pdf`)
             toast.success(t.toast.download_success)
           }}
         >
