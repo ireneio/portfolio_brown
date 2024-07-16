@@ -113,10 +113,10 @@ export default {
     "projects": "Projects",
     "skills": "Skills",
     "experience": "Experience",
-    "contact": "Contact me"
+    "contact": "Contact Me"
   },
   "contact": {
-    title: "Contact me",
+    title: "Contact Me",
     "submit": "Submit",
     "contact_me_at": `Please contact me through <a href="mailto:{{email}}" style="text-decoration: underline;">{{email}}</a> or through the form below.`
   },
