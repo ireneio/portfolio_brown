@@ -1,4 +1,4 @@
-import { getDictionary } from '@/app/[lang]/dictionaries'
+import { getDictionary } from '@/app/i18n/dictionaries'
 import Intro from "@/components/Home/Intro";
 import SectionDivider from "@/components/SectionDivider";
 import Projects from "@/components/Home/Projects";

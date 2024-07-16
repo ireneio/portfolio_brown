@@ -7,12 +7,12 @@ import useData from "@/lib/useData";
 import ThemeContextProvider from "@/context/theme-context";
 import StoreProvider from "../StoreProvider";
 import Footer from "@/components/Footer";
-import { getDictionary } from "./dictionaries";
+import { getDictionary } from "../i18n/dictionaries";
 import Sidebar from "@/components/Sidebar";
 import { Toaster } from "react-hot-toast";
 import "../globals.css";
 import GReCaptchaProvider from "../GReCaptchaProvider";
-import I18nProvider from "../I18nProvider";
+import I18nProvider from "../i18n/I18nProvider";
 
 const inter = Inter({ subsets: ["latin"] });
 

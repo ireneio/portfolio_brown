@@ -1,6 +1,6 @@
 import React from "react";
 import { CgWorkAlt } from "react-icons/cg";
-import { getDictionary } from "@/app/[lang]/dictionaries";
+import { getDictionary } from "@/app/i18n/dictionaries";
 
 import image_lotusrmp from "/public/images/lotusrmp.png"
 import image_lotusrmp2 from "/public/images/lotusrmp2.png"

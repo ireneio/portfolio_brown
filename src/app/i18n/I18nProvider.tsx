@@ -2,8 +2,8 @@
 
 import { fallbackLng } from '@/app/i18n'
 import i18next from 'i18next'
-import { I18nextProvider, I18nextProviderProps, initReactI18next } from 'react-i18next'
-import { getDictionary } from "./[lang]/dictionaries";
+import { I18nextProvider, initReactI18next } from 'react-i18next'
+import { getDictionary } from "./dictionaries";
 import React, { useEffect, useState } from 'react';
 import { useRouteParams } from '@/context/route-params-content';
 
@@ -37,6 +37,8 @@ const I18nProvider = ({ children }: React.PropsWithChildren) => {
     
     if (params.lang) {
       initI18n(params.lang).then((i18n) => {
+        console.log('i18n', i18n);
+        
         setI18n(i18n)
       })
     }

@@ -2,27 +2,23 @@ import { NextRequest, NextResponse } from "next/server";
 import acceptLanguage from 'accept-language'
 import { defaultLng, languages } from '@/app/i18n'
 
-// Get the preferred locale, similar to the above or using a library
+// Get locale from header: accept-language
 function getLocale(request: NextRequest) {
-  const lang = request.nextUrl.locale
-  if (!lang) {
-    acceptLanguage.languages(languages)
-    const langFromHeaders = acceptLanguage.get(request.headers.get('Accept-Language'))    
-    return langFromHeaders || defaultLng
-  }
-  return lang || defaultLng
+  acceptLanguage.languages(languages)
+  const langFromHeaders = acceptLanguage.get(request.headers.get('Accept-Language'))    
+  return langFromHeaders || defaultLng
 }
 
 export function middleware(request: NextRequest) {  
   // Check if there is any supported locale in the pathname
   const { pathname } = request.nextUrl
-  const pathnameHasLocale = languages.find(
+  const pathnameLocale = languages.find(
     (lang) => pathname.startsWith(`/${lang}/`) || pathname === `/${lang}`
   )
   const response = NextResponse.next()
 
-  if (pathnameHasLocale) {
-    response.cookies.set('lang', pathnameHasLocale);
+  if (pathnameLocale) {
+    response.cookies.set('lang', pathnameLocale);
     return
   }
  
