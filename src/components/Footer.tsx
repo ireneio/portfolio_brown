@@ -12,7 +12,7 @@ export default function Footer({ t }: { t: any }) {
   return (
     <footer className="mb-10 px-4 text-center text-gray-500">
       <small className="mb-2 block text-xs">
-        &copy; {new Date().getFullYear()} Brown. All rights reserved. Built with NextJS v13.
+        &copy; {new Date().getFullYear()} Brown. All rights reserved. Built with NextJS v14.
       </small>
       <div className="flex gap-4 justify-center">
         <a className="text-xs underline" href={`mailto:${contactEmail}`}>{t.footer.contact_me}</a>
