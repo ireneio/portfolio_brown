@@ -53,7 +53,7 @@ export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
   }, [carouselRef.current, initalModalImageIndex, showProjectImageModal])
 
   return (
-    <section ref={ref} id="projects" className="scroll-mt-28 mb-28">
+    <section ref={ref} id="projects" className="scroll-mt-28 mb-28 sm:mb-40">
       <SectionHeading>{t.projects.title}</SectionHeading>
       <div>
         {data.map((project: ProjectData, index: number) => (
