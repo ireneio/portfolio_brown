@@ -4,11 +4,11 @@ import React from "react";
 import SectionHeading from "@/components/SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useSectionInView";
-import { useTranslation } from "react-i18next";
+// import { useTranslation } from "react-i18next";
 
 export default function About({ t }: any) {
   const { ref } = useSectionInView("About");
-  const { t: trans } = useTranslation()  
+  // const { t: trans } = useTranslation()
 
   return (
     <motion.section
@@ -19,7 +19,8 @@ export default function About({ t }: any) {
       transition={{ delay: 0.175 }}
       id="about"
     >
-      <SectionHeading>{trans('about.title')}</SectionHeading>
+      {/* <SectionHeading>{trans('about.title')}</SectionHeading> */}
+      <SectionHeading>{t.about.title}</SectionHeading>
       <p className="mb-3">
         {t.about.introduction}
       </p>
