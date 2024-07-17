@@ -102,7 +102,7 @@ export default function Intro({ t }: any) {
         <button
           className="group bg-white px-7 py-3 flex items-center gap-2 rounded-full outline-none focus:scale-110 hover:scale-110 active:scale-105 transition cursor-pointer borderBlack dark:bg-white/10"
           onClick={() => {
-            handleDownloadFile(`/resume_${params?.lang}.pdf`, `resume_${t.intro.name}.pdf`)
+            handleDownloadFile(`/resumes/resume_${params?.lang}.pdf`, `resume_${t.intro.name}.pdf`)
             toast.success(t.toast.download_success)
           }}
         >

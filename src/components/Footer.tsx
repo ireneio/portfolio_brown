@@ -19,18 +19,13 @@ export default function Footer({ t }: { t: any }) {
         <button
           className="text-xs underline"
           onClick={() => {
-            handleDownloadFile(`/resume_${params?.lang}.pdf`, `resume_${t.intro.name}.pdf`)
+            handleDownloadFile(`/resumes/resume_${params?.lang}.pdf`, `resume_${t.intro.name}.pdf`)
             toast.success(t.toast.download_success)
           }}
         >
           {t.footer.download_cv}
         </button>
       </div>
-      {/* <p className="text-xs">
-        <span className="font-semibold">About this website:</span> built with
-        React & Next.js (App Router & Server Actions), TypeScript, Tailwind CSS,
-        Framer Motion, React Email & Resend, Vercel hosting.
-      </p> */}
     </footer>
   );
 }
