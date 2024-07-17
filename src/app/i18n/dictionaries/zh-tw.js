@@ -138,5 +138,8 @@ export default {
   form: {
     your_email: '請輸入您的 Email',
     your_message: '請輸入訊息...',
+  },
+  back_to_top: {
+    title: '回上方',
   }
 }

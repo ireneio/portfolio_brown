@@ -134,5 +134,8 @@ export default {
   form: {
     your_email: 'Enter your email',
     your_message: 'Enter your message...',
+  },
+  back_to_top: {
+    title: 'Back to top',
   }
 }

@@ -1,6 +1,6 @@
 import { getDictionary } from '@/app/i18n/dictionaries'
 import Intro from "@/components/Home/Intro";
-import SectionDivider from "@/components/SectionDivider";
+import SectionDivider from "@/components/common/SectionDivider";
 import Projects from "@/components/Home/Projects";
 import About from "@/components/Home/About";
 import Skills from "@/components/Home/Skills";
@@ -8,6 +8,7 @@ import useData from "@/lib/useData";
 import Experience from '@/components/Home/Experience';
 import SoftSkills from '@/components/Home/SoftSkills';
 import Contact from '@/components/Home/Contact';
+import BackToTop from '@/components/Home/BackToTop';
 
 export default async function Home({ params }: any) {
   const { lang } = params
@@ -25,6 +26,7 @@ export default async function Home({ params }: any) {
       <Projects t={t} data={projectsData} />
       <Experience t={t} data={experiencesData} />
       <Contact t={t} />
+      <BackToTop t={t} />
     </main>
   );
 }

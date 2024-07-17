@@ -138,5 +138,8 @@ export default {
   form: {
     your_email: '请输入您的 Email',
     your_message: '请输入讯息...',
+  },
+  back_to_top: {
+    title: '回上方',
   }
 }

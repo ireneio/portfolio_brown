@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState } from "react";
-import SectionHeading from "@/components/SectionHeading";
+import SectionHeading from "@/components/common/SectionHeading";
 import { motion } from "framer-motion";
 import { useSectionInView } from "@/lib/useSectionInView";
 import { sendEmail } from "@/actions/sendEmail";

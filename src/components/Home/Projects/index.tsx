@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useEffect, useRef } from "react";
-import SectionHeading from "@/components/SectionHeading";
+import SectionHeading from "@/components/common/SectionHeading";
 import Project from "./Project";
 import { useSectionInView } from "@/lib/useSectionInView";
 import { ProjectData } from "@/lib/types";
-import Modal from "@/components/Modal";
+import Modal from "@/components/common/Modal";
 import { useAppDispatch, useAppSelector } from "@/lib/hooks";
 import { FaTimes } from "react-icons/fa";
 import { setShowProjectImageModal } from "@/lib/features/project/projectSlice";

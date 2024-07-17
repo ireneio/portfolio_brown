@@ -5,12 +5,12 @@ import { motion } from "framer-motion";
 import Link from "next/link";
 import clsx from "clsx";
 import { useActiveSectionContext } from "@/context/active-section-context";
-import LocaleSwitch from "./LocaleSwitch";
+import LocaleSwitch from "../common/LocaleSwitch";
 import { FaBars } from "react-icons/fa";
 import { LinkData } from "@/lib/types";
 import { useAppDispatch } from "@/lib/hooks";
 import { setSidebarOpen } from "@/lib/features/global/globalSlice";
-import ThemeSwitch from "./ThemeSwitch";
+import ThemeSwitch from "../common/ThemeSwitch";
 
 export default function Header({ lang, links }: { lang: string, links: LinkData[] }) {
   const { activeSection, setActiveSection, setTimeOfLastClick } =
