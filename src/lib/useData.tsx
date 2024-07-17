@@ -15,7 +15,7 @@ import image_fqc_app from "/public/images/fqc_app.png"
 import image_fqc_app2 from "/public/images/fqc_app2.png"
 import image_fqc_app3 from "/public/images/fqc_app3.png"
 
-import rpgaming_mobile from "/public/images/rpgaming_mobile.png"
+// import rpgaming_mobile from "/public/images/rpgaming_mobile.png"
 import rpgaming_pc from "/public/images/rpgaming_pc.png"
 import rpgaming_pc2 from "/public/images/rpgaming_pc2.png"
 import rpgaming_pc3 from "/public/images/rpgaming_pc3.png"
@@ -25,9 +25,9 @@ import cgc from "/public/images/cgc.png"
 import cgc2 from "/public/images/cgc2.png"
 import cgc3 from "/public/images/cgc3.png"
 import cgc4 from "/public/images/cgc4.png"
-
 import cgc_landing from "/public/images/cgc_landing.png"
-import { FaBook, FaComment, FaFile, FaGraduationCap, FaHome, FaProjectDiagram, FaUser } from "react-icons/fa";
+
+import { FaBook, FaBriefcase, FaComment, FaGraduationCap, FaProjectDiagram, FaUser } from "react-icons/fa";
 
 const useData = async (lang: string) => {
   const t = await getDictionary(lang)
@@ -61,7 +61,7 @@ const useData = async (lang: string) => {
       name: t.header.experience,
       hash: "#experience",
       key: 'Experience',
-      icon: <FaFile />
+      icon: <FaBriefcase />
     },
     {
       name: t.header.contact,
