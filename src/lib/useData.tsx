@@ -27,41 +27,47 @@ import cgc3 from "/public/images/cgc3.png"
 import cgc4 from "/public/images/cgc4.png"
 
 import cgc_landing from "/public/images/cgc_landing.png"
-import { FaGraduationCap } from "react-icons/fa";
+import { FaBook, FaComment, FaFile, FaGraduationCap, FaHome, FaProjectDiagram, FaUser } from "react-icons/fa";
 
 const useData = async (lang: string) => {
   const t = await getDictionary(lang)
 
   const links = [
-    {
-      name: t.header.home,
-      hash: "#home",
-      key: 'Home'
-    },
+    // {
+    //   name: t.header.home,
+    //   hash: "#home",
+    //   key: 'Home',
+    //   icon: <FaHome />
+    // },
     {
       name: t.header.about,
       hash: "#about",
-      key: 'About'
+      key: 'About',
+      icon: <FaUser />
     },
     {
       name: t.header.skills,
       hash: "#skills",
-      key: 'Skills'
+      key: 'Skills',
+      icon: <FaBook />
     },
     {
       name: t.header.projects,
       hash: "#projects",
-      key: 'Projects'
+      key: 'Projects',
+      icon: <FaProjectDiagram />
     },
     {
       name: t.header.experience,
       hash: "#experience",
-      key: 'Experience'
+      key: 'Experience',
+      icon: <FaFile />
     },
     {
       name: t.header.contact,
       hash: "#contact",
-      key: 'Contact'
+      key: 'Contact',
+      icon: <FaComment />
     },
   ]
 

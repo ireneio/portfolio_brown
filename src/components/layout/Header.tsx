@@ -21,6 +21,13 @@ export default function Header({ lang, links }: { lang: string, links: LinkData[
     dispatch(setSidebarOpen(true))
   }
 
+  const handleLinkClick = (link: LinkData) => {
+    setActiveSection(link.key);
+    setTimeOfLastClick(Date.now());
+    const dom = document.querySelector(link.hash)
+    dom?.scrollIntoView({ behavior: 'smooth' })
+  }
+
   return (
     <header className="z-[999] relative">
       {/* mobile */}
@@ -47,19 +54,15 @@ export default function Header({ lang, links }: { lang: string, links: LinkData[
               initial={{ y: -100, opacity: 0 }}
               animate={{ y: 0, opacity: 1 }}
             >
-              <Link
+              <span
                 className={clsx(
-                  "flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300 text-nowrap",
+                  "cursor-pointer flex w-full items-center justify-center px-3 py-3 hover:text-gray-950 transition dark:text-gray-500 dark:hover:text-gray-300 text-nowrap",
                   {
                     "text-gray-950 dark:text-gray-200":
                       activeSection === link.key,
                   }
                 )}
-                href={link.hash}
-                onClick={() => {
-                  setActiveSection(link.key);
-                  setTimeOfLastClick(Date.now());
-                }}
+                onClick={() => handleLinkClick(link)}
               >
                 {link.name}
 
@@ -74,7 +77,7 @@ export default function Header({ lang, links }: { lang: string, links: LinkData[
                     }}
                   ></motion.span>
                 )}
-              </Link>
+              </span>
             </motion.li>
           ))}
         </ul>

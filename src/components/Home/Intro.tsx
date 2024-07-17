@@ -15,14 +15,16 @@ import { useRouteParams } from "@/context/route-params-content";
 import toast from "react-hot-toast";
 
 export default function Intro({ t }: any) {
-  const { ref } = useSectionInView("Home", 0.5);
+  const { ref } = useSectionInView("About", 0.5);
+  // const { ref } = useSectionInView("Home", 0.5);
   const { setActiveSection, setTimeOfLastClick } = useActiveSectionContext();
   const params = useRouteParams()  
 
   return (
     <section
       ref={ref}
-      id="home"
+      // id="home"
+      id="about"
       className="mb-28 max-w-[60rem] text-center sm:mb-0 scroll-mt-[100rem]"
     >
       <div className="flex items-center justify-center">

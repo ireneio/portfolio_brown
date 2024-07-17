@@ -21,6 +21,8 @@ export default async function Home({ params }: any) {
       <Intro t={t} />
       <SectionDivider />
       <About t={t} />
+      <SectionDivider />
+      <div className='sm:mb-40 mb-28'></div>
       <Skills t={t} data={skillsData} />
       <SoftSkills t={t} data={softSkillsData} />
       <Projects t={t} data={projectsData} />

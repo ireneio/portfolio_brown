@@ -14,6 +14,7 @@ export interface LinkData {
   name: string;
   hash: string;
   key: string;
+  icon: React.ReactNode;
 }
 
 export interface ProjectData {

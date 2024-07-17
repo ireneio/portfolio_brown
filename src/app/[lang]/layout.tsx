@@ -13,6 +13,7 @@ import { Toaster } from "react-hot-toast";
 import "../globals.css";
 import GReCaptchaProvider from "../GReCaptchaProvider";
 import I18nProvider from "../i18n/I18nProvider";
+import SideScroller from "@/components/layout/SideScroller";
 
 const inter = Inter({ subsets: ["latin"] });
 
@@ -58,6 +59,7 @@ export default async function RootLayout({
                         <Sidebar links={links} />
                         {children}
                         <Footer t={t} />
+                        <SideScroller data={links} />
                         <Toaster position="top-center" />
                       </ActiveSectionContextProvider>
                     </ThemeContextProvider>
