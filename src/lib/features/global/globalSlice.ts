@@ -15,10 +15,10 @@ export const globalSlice = createSlice({
       }
       if (action.payload === true) {
         document.body.style.overflowY = 'hidden'
-        window.addEventListener('scroll', disableOnScroll, { passive: false });
+        document.body.addEventListener('scroll', disableOnScroll, { passive: false });
       } else if (action.payload === false) {
         document.body.style.overflowY = 'auto'
-        window.removeEventListener('scroll', disableOnScroll)
+        document.body.removeEventListener('scroll', disableOnScroll)
       }
     },
   },

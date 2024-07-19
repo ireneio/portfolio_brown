@@ -36,10 +36,10 @@ export default function Modal({ children, show }: { children: React.ReactNode, s
   React.useEffect(() => {
     if (show) {
       document.body.style.overflowY = 'hidden'
-      window.addEventListener('scroll', disableOnScroll, { passive: false });
+      document.body.addEventListener('scroll', disableOnScroll, { passive: false });
     } else {
       document.body.style.overflowY = 'auto'
-      window.removeEventListener('scroll', disableOnScroll)
+      document.body.removeEventListener('scroll', disableOnScroll)
     }
   }, [show])
 
