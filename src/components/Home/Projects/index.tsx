@@ -66,7 +66,7 @@ export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
         <div className="absolute right-0 py-[24px] px-[24px] cursor-pointer" onClick={() => dispatch(setShowProjectImageModal(false))}>
           <FaTimes className="text-[24px]" />
         </div>
-        <div className="px-[24px] py-[72px]">
+        <div className="md:px-[24px] py-[72px]">
           <Carousel
             ref={carouselRef}
             responsive={responsive}
@@ -80,7 +80,7 @@ export default function Projects({ t, data }: { t: any; data: ProjectData[] }) {
                   src={image.src}
                   alt={image.alt}
                   className={clsx(
-                    "max-h-[82vh] w-auto object-contain",
+                    "h-[82vh] w-auto object-contain",
                     theme === 'light' ? 'bg-gray-300 bg-opacity-[0.3]' : 'bg-gray-700 bg-opacity-[0.3]'
                   )}
                 />

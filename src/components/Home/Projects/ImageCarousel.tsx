@@ -1,3 +1,5 @@
+import { setInitalModalImageIndex, setModalImageList, setShowProjectImageModal } from "@/lib/features/project/projectSlice";
+import { useAppDispatch } from "@/lib/hooks";
 import Image, { StaticImageData } from "next/image";
 import Carousel from "react-multi-carousel";
 
@@ -29,6 +31,17 @@ const responsive = {
 };
 
 const ImageCarousel = ({ images }: { images: CarouselImage[] }) => {
+  const dispatch = useAppDispatch()
+
+  const handleProjectImageClick = (index: number) => {
+    dispatch(setInitalModalImageIndex(index))
+    dispatch(setModalImageList(images))
+    const tid = setTimeout(() => {
+      dispatch(setShowProjectImageModal(true))
+      clearTimeout(tid)
+    }, 100)
+  }
+
   return (
     <Carousel
       responsive={responsive}
@@ -36,7 +49,7 @@ const ImageCarousel = ({ images }: { images: CarouselImage[] }) => {
     >
       {images.map((image, index) => {
         return (
-          <div key={index}>
+          <div key={index} onClick={() => handleProjectImageClick(index)}>
             <Image
               src={image.src}
               alt={image.alt}
