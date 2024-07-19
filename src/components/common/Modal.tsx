@@ -27,7 +27,7 @@ export default function Modal({ children, show }: { children: React.ReactNode, s
   const content =  React.useMemo(() => {
     return (
       <div className={clsx("fixed top-0 left-0 right-0 bottom-0 z-[1002] flex items-center justify-center bg-black bg-opacity-[0.5]", show ? 'block' : 'hidden')}>
-        <div className={clsx("w-[95vw] h-[95vh] rounded-[8px] relative", theme === 'light' ? 'bg-white' : 'bg-gray-800')}>
+        <div className={clsx("w-[100vw] h-[100vh] md:w-[95vw] md:h-[95vh] md:rounded-[8px] relative", theme === 'light' ? 'bg-white' : 'bg-gray-800')}>
           {children}
         </div>
       </div>
