@@ -27,7 +27,7 @@ export default function Modal({ children, show }: { children: React.ReactNode, s
         </div>
       </div>
     )
-  }, [show, theme])
+  }, [show, theme, children])
 
   function disableOnScroll(event: Event) {
     event.preventDefault();
